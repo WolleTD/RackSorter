@@ -1,0 +1,3 @@
+[submodule "RackSorterPython"]
+	path = RackSorterPython
+	url = ssh://wolle@wolletd.de:2200/home/wolle/RackSorter
