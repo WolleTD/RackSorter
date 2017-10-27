@@ -754,44 +754,4 @@
 			</Device>
 		</Io>
 	</Project>
-	<Mappings>
-		<MappingInfo Identifier="{00000000-0010-0304-1000-010110000403}" Id="#x03070010"/>
-		<OwnerA Name="TIID^Controller_HighRackWarehouse">
-			<OwnerB Name="TIXC^HighRackWarehouse_CPP^HighRackWarehouse_CPP_Obj1 (CHighRackWarehouse)">
-				<Link VarA="A1_EK1100^A2_EL2202^Channel 1^x_motor_left" VarB="Outputs^x_motor_left"/>
-				<Link VarA="A1_EK1100^A2_EL2202^Channel 2^x_motor_right" VarB="Outputs^x_motor_right"/>
-				<Link VarA="A1_EK1100^A3_EL2202^Channel 1^y_motor_up" VarB="Outputs^y_motor_up"/>
-				<Link VarA="A1_EK1100^A3_EL2202^Channel 2^y_motor_down" VarB="Outputs^y_motor_down"/>
-				<Link VarA="A1_EK1100^A4_EL2202^Channel 1^z_motor_forward" VarB="Outputs^z_motor_forward"/>
-				<Link VarA="A1_EK1100^A4_EL2202^Channel 2^z_motor_back" VarB="Outputs^z_motor_back"/>
-				<Link VarA="A1_EK1100^A5_EL2202^Channel 1^conveyorAndCrossbeam_motor_forward" VarB="Outputs^conveyorAndCrossbeam_motor_forward"/>
-				<Link VarA="A1_EK1100^A5_EL2202^Channel 2^conveyorAndCrossbeam_motor_back" VarB="Outputs^conveyorAndCrossbeam_motor_back"/>
-				<Link VarA="A1_EK1100^A6_EL1018^Channel 1^x_endSwitch_left" VarB="Inputs^x_endSwitch_left"/>
-				<Link VarA="A1_EK1100^A6_EL1018^Channel 2^x_switch_00" VarB="Inputs^x_switch_00"/>
-				<Link VarA="A1_EK1100^A6_EL1018^Channel 3^x_switch_01" VarB="Inputs^x_switch_01"/>
-				<Link VarA="A1_EK1100^A6_EL1018^Channel 4^x_switch_02" VarB="Inputs^x_switch_02"/>
-				<Link VarA="A1_EK1100^A6_EL1018^Channel 5^x_switch_03" VarB="Inputs^x_switch_03"/>
-				<Link VarA="A1_EK1100^A6_EL1018^Channel 6^x_switch_04" VarB="Inputs^x_switch_04"/>
-				<Link VarA="A1_EK1100^A6_EL1018^Channel 7^x_switch_05" VarB="Inputs^x_switch_05"/>
-				<Link VarA="A1_EK1100^A6_EL1018^Channel 8^x_switch_06" VarB="Inputs^x_switch_06"/>
-				<Link VarA="A1_EK1100^A7_EL1018^Channel 1^x_switch_07" VarB="Inputs^x_switch_07"/>
-				<Link VarA="A1_EK1100^A7_EL1018^Channel 2^x_switch_08" VarB="Inputs^x_switch_08"/>
-				<Link VarA="A1_EK1100^A7_EL1018^Channel 3^x_switch_09" VarB="Inputs^x_switch_09"/>
-				<Link VarA="A1_EK1100^A7_EL1018^Channel 4^x_endSwitch_right" VarB="Inputs^x_endSwitch_right"/>
-				<Link VarA="A1_EK1100^A7_EL1018^Channel 5^y_floorSwitch_00_upstairs" VarB="Inputs^y_floorSwitch_00_upstairs"/>
-				<Link VarA="A1_EK1100^A7_EL1018^Channel 6^y_floorSwitch_00_downstairs" VarB="Inputs^y_floorSwitch_00_downstairs"/>
-				<Link VarA="A1_EK1100^A7_EL1018^Channel 7^y_floorSwitch_01_upstairs" VarB="Inputs^y_floorSwitch_01_upstairs"/>
-				<Link VarA="A1_EK1100^A7_EL1018^Channel 8^y_floorSwitch_01_downstairs" VarB="Inputs^y_floorSwitch_01_downstairs"/>
-				<Link VarA="A1_EK1100^A8_EL1018^Channel 1^y_floorSwitch_02_upstairs" VarB="Inputs^y_floorSwitch_02_upstairs"/>
-				<Link VarA="A1_EK1100^A8_EL1018^Channel 2^y_floorSwitch_02_downstairs" VarB="Inputs^y_floorSwitch_02_downstairs"/>
-				<Link VarA="A1_EK1100^A8_EL1018^Channel 3^y_floorSwitch_03_upstairs" VarB="Inputs^y_floorSwitch_03_upstairs"/>
-				<Link VarA="A1_EK1100^A8_EL1018^Channel 4^y_floorSwitch_03_downstairs" VarB="Inputs^y_floorSwitch_03_downstairs"/>
-				<Link VarA="A1_EK1100^A8_EL1018^Channel 5^stackerCrane_position_conveyor" VarB="Inputs^stackerCrane_position_conveyor"/>
-				<Link VarA="A1_EK1100^A8_EL1018^Channel 6^stackerCrane_position_neutral" VarB="Inputs^stackerCrane_position_neutral"/>
-				<Link VarA="A1_EK1100^A8_EL1018^Channel 7^stackerCrane_position_stack" VarB="Inputs^stackerCrane_position_stack"/>
-				<Link VarA="A1_EK1100^A8_EL1018^Channel 8^crossbeam_lightBarrier_packet" VarB="Inputs^crossbeam_lightBarrier_packet"/>
-				<Link VarA="A1_EK1100^A9_EL1018^Channel 1^conveyor_lightBarrier_packet" VarB="Inputs^conveyor_lightBarrier_packet"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmProject>

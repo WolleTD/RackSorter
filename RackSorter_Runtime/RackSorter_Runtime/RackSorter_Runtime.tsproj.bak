@@ -172,48 +172,210 @@
 								<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
 								<Name>Inputs</Name>
 								<ContextId>1</ContextId>
-								<ByteSize>12</ByteSize>
+								<ByteSize>25</ByteSize>
 								<Symbol>
-									<Name>Value</Name>
-									<BitSize>32</BitSize>
-									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<Name>x_endSwitch_left</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 									<BitOffs>0</BitOffs>
 								</Symbol>
 								<Symbol>
-									<Name>Status</Name>
-									<BitSize>32</BitSize>
-									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<Name>x_switch_00</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>8</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_switch_01</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>16</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_switch_02</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>24</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_switch_03</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 									<BitOffs>32</BitOffs>
 								</Symbol>
 								<Symbol>
-									<Name>Data</Name>
-									<BitSize>32</BitSize>
-									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<Name>x_switch_04</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>40</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_switch_05</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>48</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_switch_06</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>56</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_switch_07</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 									<BitOffs>64</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_switch_08</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>72</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_switch_09</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>80</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>x_endSwitch_right</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>88</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_floorSwitch_00_upstairs</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>96</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_floorSwitch_00_downstairs</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>104</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_floorSwitch_01_upstairs</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>112</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_floorSwitch_01_downstairs</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>120</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_floorSwitch_02_upstairs</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>128</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_floorSwitch_02_downstairs</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>136</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_floorSwitch_03_upstairs</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>144</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_floorSwitch_03_downstairs</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>152</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>stackerCrane_position_conveyor</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>160</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>stackerCrane_position_neutral</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>168</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>stackerCrane_position_stack</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>176</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>crossbeam_lightBarrier_packet</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>184</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>conveyor_lightBarrier_packet</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>192</BitOffs>
 								</Symbol>
 							</DataArea>
 							<DataArea>
 								<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 								<Name>Outputs</Name>
 								<ContextId>1</ContextId>
-								<ByteSize>12</ByteSize>
+								<ByteSize>8</ByteSize>
 								<Symbol>
-									<Name>Value</Name>
-									<BitSize>32</BitSize>
-									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<Name>x_motor_left</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 									<BitOffs>0</BitOffs>
 								</Symbol>
 								<Symbol>
-									<Name>Control</Name>
-									<BitSize>32</BitSize>
-									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<Name>x_motor_right</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>8</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_motor_up</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>16</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>y_motor_down</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>24</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>z_motor_forward</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 									<BitOffs>32</BitOffs>
 								</Symbol>
 								<Symbol>
-									<Name>Data</Name>
-									<BitSize>32</BitSize>
-									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-									<BitOffs>64</BitOffs>
+									<Name>z_motor_back</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>40</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>conveyorAndCrossbeam_motor_forward</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>48</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>conveyorAndCrossbeam_motor_back</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>56</BitOffs>
 								</Symbol>
 							</DataArea>
 						</DataAreas>
@@ -291,17 +453,17 @@
 					<Name>Prozessabbild</Name>
 				</Image>
 				<Box BoxType="9099" Id="1">
-					<Name>Klemme 1 (EK1100)</Name>
+					<Name>A1_EK1100</Name>
 					<ImageId>1000</ImageId>
 					<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044c2c52" RevisionNo="#x00110000" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1100 EtherCAT-Koppler (2A E-Bus)" Desc="EK1100" PortABoxInfo="#x00ffffff"/>
 					<Box BoxType="9099" Id="2">
-						<Name>Klemme 2 (EL2202)</Name>
+						<Name>A2_EL2202</Name>
 						<ImageId>1001</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x089a3052" RevisionNo="#x00100000" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2202 2K. Dig. Ausgang 24V, 0.5A" Desc="EL2202" PortABoxInfo="#x01000001">
 							<SyncMan>000f01004400010003000000000000000000000f44090000</SyncMan>
 							<Fmmu>0000000000000000000f00020100000001000000060000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7000" Sub="#x01">
+								<Entry Name="x_motor_left" Index="#x7000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="TriState" Index="#x7000" Sub="#x02">
@@ -309,7 +471,7 @@
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7010" Sub="#x01">
+								<Entry Name="x_motor_right" Index="#x7010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="TriState" Index="#x7010" Sub="#x02">
@@ -319,13 +481,13 @@
 						</EtherCAT>
 					</Box>
 					<Box BoxType="9099" Id="3">
-						<Name>Klemme 3 (EL2202)</Name>
+						<Name>A3_EL2202</Name>
 						<ImageId>1001</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x089a3052" RevisionNo="#x00100000" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2202 2K. Dig. Ausgang 24V, 0.5A" Desc="EL2202" PortABoxInfo="#x01000002">
 							<SyncMan>000f01004400010003000000000000000000000f44090000</SyncMan>
 							<Fmmu>0000000000000000000f00020100000001000000060000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7000" Sub="#x01">
+								<Entry Name="y_motor_up" Index="#x7000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="TriState" Index="#x7000" Sub="#x02">
@@ -333,7 +495,7 @@
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7010" Sub="#x01">
+								<Entry Name="y_motor_down" Index="#x7010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="TriState" Index="#x7010" Sub="#x02">
@@ -343,13 +505,13 @@
 						</EtherCAT>
 					</Box>
 					<Box BoxType="9099" Id="4">
-						<Name>Klemme 4 (EL2202)</Name>
+						<Name>A4_EL2202</Name>
 						<ImageId>1001</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x089a3052" RevisionNo="#x00100000" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2202 2K. Dig. Ausgang 24V, 0.5A" Desc="EL2202" PortABoxInfo="#x01000003">
 							<SyncMan>000f01004400010003000000000000000000000f44090000</SyncMan>
 							<Fmmu>0000000000000000000f00020100000001000000060000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7000" Sub="#x01">
+								<Entry Name="z_motor_forward" Index="#x7000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="TriState" Index="#x7000" Sub="#x02">
@@ -357,7 +519,7 @@
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7010" Sub="#x01">
+								<Entry Name="z_motor_back" Index="#x7010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="TriState" Index="#x7010" Sub="#x02">
@@ -367,13 +529,13 @@
 						</EtherCAT>
 					</Box>
 					<Box BoxType="9099" Id="5">
-						<Name>Klemme 5 (EL2202)</Name>
+						<Name>A5_EL2202</Name>
 						<ImageId>1001</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x089a3052" RevisionNo="#x00100000" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2202 2K. Dig. Ausgang 24V, 0.5A" Desc="EL2202" PortABoxInfo="#x01000004">
 							<SyncMan>000f01004400010003000000000000000000000f44090000</SyncMan>
 							<Fmmu>0000000000000000000f00020100000001000000060000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7000" Sub="#x01">
+								<Entry Name="conveyorAndCrossbeam_motor_forward" Index="#x7000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="TriState" Index="#x7000" Sub="#x02">
@@ -381,7 +543,7 @@
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7010" Sub="#x01">
+								<Entry Name="conveyorAndCrossbeam_motor_back" Index="#x7010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="TriState" Index="#x7010" Sub="#x02">
@@ -391,157 +553,157 @@
 						</EtherCAT>
 					</Box>
 					<Box BoxType="9099" Id="6">
-						<Name>Klemme 6 (EL1018)</Name>
+						<Name>A6_EL1018</Name>
 						<ImageId>7</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03fa3052" RevisionNo="#x00100000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1018 8K. Dig. Eingang 24V, 10µs" Desc="EL1018" PortABoxInfo="#x01000005">
 							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6000" Sub="#x01">
+								<Entry Name="x_endSwitch_left" Index="#x6000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6010" Sub="#x01">
+								<Entry Name="x_switch_00" Index="#x6010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6020" Sub="#x01">
+								<Entry Name="x_switch_01" Index="#x6020" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6030" Sub="#x01">
+								<Entry Name="x_switch_02" Index="#x6030" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6040" Sub="#x01">
+								<Entry Name="x_switch_03" Index="#x6040" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6050" Sub="#x01">
+								<Entry Name="x_switch_04" Index="#x6050" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 7" Index="#x1a06" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6060" Sub="#x01">
+								<Entry Name="x_switch_05" Index="#x6060" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6070" Sub="#x01">
+								<Entry Name="x_switch_06" Index="#x6070" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 						</EtherCAT>
 					</Box>
 					<Box BoxType="9099" Id="7">
-						<Name>Klemme 7 (EL1018)</Name>
+						<Name>A7_EL1018</Name>
 						<ImageId>7</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03fa3052" RevisionNo="#x00100000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1018 8K. Dig. Eingang 24V, 10µs" Desc="EL1018" PortABoxInfo="#x01000006">
 							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6000" Sub="#x01">
+								<Entry Name="x_switch_07" Index="#x6000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6010" Sub="#x01">
+								<Entry Name="x_switch_08" Index="#x6010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6020" Sub="#x01">
+								<Entry Name="x_switch_09" Index="#x6020" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6030" Sub="#x01">
+								<Entry Name="x_endSwitch_right" Index="#x6030" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6040" Sub="#x01">
+								<Entry Name="y_floorSwitch_00_upstairs" Index="#x6040" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6050" Sub="#x01">
+								<Entry Name="y_floorSwitch_00_downstairs" Index="#x6050" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 7" Index="#x1a06" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6060" Sub="#x01">
+								<Entry Name="y_floorSwitch_01_upstairs" Index="#x6060" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6070" Sub="#x01">
+								<Entry Name="y_floorSwitch_01_downstairs" Index="#x6070" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 						</EtherCAT>
 					</Box>
 					<Box BoxType="9099" Id="8">
-						<Name>Klemme 8 (EL1018)</Name>
+						<Name>A8_EL1018</Name>
 						<ImageId>7</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03fa3052" RevisionNo="#x00100000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1018 8K. Dig. Eingang 24V, 10µs" Desc="EL1018" PortABoxInfo="#x01000007">
 							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6000" Sub="#x01">
+								<Entry Name="y_floorSwitch_02_upstairs" Index="#x6000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6010" Sub="#x01">
+								<Entry Name="y_floorSwitch_02_downstairs" Index="#x6010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6020" Sub="#x01">
+								<Entry Name="y_floorSwitch_03_upstairs" Index="#x6020" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6030" Sub="#x01">
+								<Entry Name="y_floorSwitch_03_downstairs" Index="#x6030" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6040" Sub="#x01">
+								<Entry Name="stackerCrane_position_conveyor" Index="#x6040" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6050" Sub="#x01">
+								<Entry Name="stackerCrane_position_neutral" Index="#x6050" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 7" Index="#x1a06" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6060" Sub="#x01">
+								<Entry Name="stackerCrane_position_stack" Index="#x6060" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6070" Sub="#x01">
+								<Entry Name="crossbeam_lightBarrier_packet" Index="#x6070" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 						</EtherCAT>
 					</Box>
 					<Box BoxType="9099" Id="9">
-						<Name>Klemme 9 (EL1018)</Name>
+						<Name>A9_EL1018</Name>
 						<ImageId>7</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03fa3052" RevisionNo="#x00100000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1018 8K. Dig. Eingang 24V, 10µs" Desc="EL1018" PortABoxInfo="#x01000008">
 							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6000" Sub="#x01">
+								<Entry Name="conveyor_lightBarrier_packet" Index="#x6000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
@@ -583,7 +745,7 @@
 						</EtherCAT>
 					</Box>
 					<Box BoxType="9099" Id="10">
-						<Name>Klemme 10 (EL9011)</Name>
+						<Name>A10_EL9011</Name>
 						<ImageId>1002</ImageId>
 						<EtherCAT CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23333050" InfoDataState="false" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL9011 Endklemme" Desc="EL9011" PortABoxInfo="#x01000009"/>
 					</Box>
@@ -592,4 +754,44 @@
 			</Device>
 		</Io>
 	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-0010-0304-1000-010110000403}" Id="#x03070010"/>
+		<OwnerA Name="TIID^Controller_HighRackWarehouse">
+			<OwnerB Name="TIXC^HighRackWarehouse_CPP^HighRackWarehouse_CPP_Obj1 (CHighRackWarehouse)">
+				<Link VarA="A1_EK1100^A2_EL2202^Channel 1^x_motor_left" VarB="Outputs^x_motor_left"/>
+				<Link VarA="A1_EK1100^A2_EL2202^Channel 2^x_motor_right" VarB="Outputs^x_motor_right"/>
+				<Link VarA="A1_EK1100^A3_EL2202^Channel 1^y_motor_up" VarB="Outputs^y_motor_up"/>
+				<Link VarA="A1_EK1100^A3_EL2202^Channel 2^y_motor_down" VarB="Outputs^y_motor_down"/>
+				<Link VarA="A1_EK1100^A4_EL2202^Channel 1^z_motor_forward" VarB="Outputs^z_motor_forward"/>
+				<Link VarA="A1_EK1100^A4_EL2202^Channel 2^z_motor_back" VarB="Outputs^z_motor_back"/>
+				<Link VarA="A1_EK1100^A5_EL2202^Channel 1^conveyorAndCrossbeam_motor_forward" VarB="Outputs^conveyorAndCrossbeam_motor_forward"/>
+				<Link VarA="A1_EK1100^A5_EL2202^Channel 2^conveyorAndCrossbeam_motor_back" VarB="Outputs^conveyorAndCrossbeam_motor_back"/>
+				<Link VarA="A1_EK1100^A6_EL1018^Channel 1^x_endSwitch_left" VarB="Inputs^x_endSwitch_left"/>
+				<Link VarA="A1_EK1100^A6_EL1018^Channel 2^x_switch_00" VarB="Inputs^x_switch_00"/>
+				<Link VarA="A1_EK1100^A6_EL1018^Channel 3^x_switch_01" VarB="Inputs^x_switch_01"/>
+				<Link VarA="A1_EK1100^A6_EL1018^Channel 4^x_switch_02" VarB="Inputs^x_switch_02"/>
+				<Link VarA="A1_EK1100^A6_EL1018^Channel 5^x_switch_03" VarB="Inputs^x_switch_03"/>
+				<Link VarA="A1_EK1100^A6_EL1018^Channel 6^x_switch_04" VarB="Inputs^x_switch_04"/>
+				<Link VarA="A1_EK1100^A6_EL1018^Channel 7^x_switch_05" VarB="Inputs^x_switch_05"/>
+				<Link VarA="A1_EK1100^A6_EL1018^Channel 8^x_switch_06" VarB="Inputs^x_switch_06"/>
+				<Link VarA="A1_EK1100^A7_EL1018^Channel 1^x_switch_07" VarB="Inputs^x_switch_07"/>
+				<Link VarA="A1_EK1100^A7_EL1018^Channel 2^x_switch_08" VarB="Inputs^x_switch_08"/>
+				<Link VarA="A1_EK1100^A7_EL1018^Channel 3^x_switch_09" VarB="Inputs^x_switch_09"/>
+				<Link VarA="A1_EK1100^A7_EL1018^Channel 4^x_endSwitch_right" VarB="Inputs^x_endSwitch_right"/>
+				<Link VarA="A1_EK1100^A7_EL1018^Channel 5^y_floorSwitch_00_upstairs" VarB="Inputs^y_floorSwitch_00_upstairs"/>
+				<Link VarA="A1_EK1100^A7_EL1018^Channel 6^y_floorSwitch_00_downstairs" VarB="Inputs^y_floorSwitch_00_downstairs"/>
+				<Link VarA="A1_EK1100^A7_EL1018^Channel 7^y_floorSwitch_01_upstairs" VarB="Inputs^y_floorSwitch_01_upstairs"/>
+				<Link VarA="A1_EK1100^A7_EL1018^Channel 8^y_floorSwitch_01_downstairs" VarB="Inputs^y_floorSwitch_01_downstairs"/>
+				<Link VarA="A1_EK1100^A8_EL1018^Channel 1^y_floorSwitch_02_upstairs" VarB="Inputs^y_floorSwitch_02_upstairs"/>
+				<Link VarA="A1_EK1100^A8_EL1018^Channel 2^y_floorSwitch_02_downstairs" VarB="Inputs^y_floorSwitch_02_downstairs"/>
+				<Link VarA="A1_EK1100^A8_EL1018^Channel 3^y_floorSwitch_03_upstairs" VarB="Inputs^y_floorSwitch_03_upstairs"/>
+				<Link VarA="A1_EK1100^A8_EL1018^Channel 4^y_floorSwitch_03_downstairs" VarB="Inputs^y_floorSwitch_03_downstairs"/>
+				<Link VarA="A1_EK1100^A8_EL1018^Channel 5^stackerCrane_position_conveyor" VarB="Inputs^stackerCrane_position_conveyor"/>
+				<Link VarA="A1_EK1100^A8_EL1018^Channel 6^stackerCrane_position_neutral" VarB="Inputs^stackerCrane_position_neutral"/>
+				<Link VarA="A1_EK1100^A8_EL1018^Channel 7^stackerCrane_position_stack" VarB="Inputs^stackerCrane_position_stack"/>
+				<Link VarA="A1_EK1100^A8_EL1018^Channel 8^crossbeam_lightBarrier_packet" VarB="Inputs^crossbeam_lightBarrier_packet"/>
+				<Link VarA="A1_EK1100^A9_EL1018^Channel 1^conveyor_lightBarrier_packet" VarB="Inputs^conveyor_lightBarrier_packet"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmProject>

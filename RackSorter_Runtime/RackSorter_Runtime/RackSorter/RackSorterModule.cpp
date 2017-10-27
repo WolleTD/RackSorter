@@ -196,10 +196,13 @@ HRESULT CRackSorterModule::CycleUpdate(ITcTask* ipTask, ITcUnknown* ipCaller, UL
 		}
 	}
 
-	// TODO: Replace the sample with your cyclic code
-	if (m_bCount)
-	{
-		m_Counter++;
+	if (m_Inputs.x_endSwitch_right && m_Inputs.x_endSwitch_left) {
+		m_Outputs.x_motor_right = true;
+		m_Outputs.x_motor_left = false;
+	}
+	else {
+		m_Outputs.x_motor_right = false;
+		m_Outputs.x_motor_left = false;
 	}
 
 	return hr;
