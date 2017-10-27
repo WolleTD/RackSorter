@@ -73,7 +73,7 @@
 				<Debugger Priority="61"/>
 			</Settings>
 			<Tasks>
-				<Task Id="1" Priority="1" CycleTime="100000" AmsPort="350">
+				<Task Id="1" Priority="1" CycleTime="50000" AmsPort="350">
 					<Name>Task 1</Name>
 				</Task>
 			</Tasks>
@@ -98,7 +98,7 @@
 									<OTCID>#x02010010</OTCID>
 								</ManualConfig>
 								<Priority>1</Priority>
-								<CycleTime>10000000</CycleTime>
+								<CycleTime>5000000</CycleTime>
 							</Context>
 						</Contexts>
 						<Interfaces>

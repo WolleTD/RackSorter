@@ -196,12 +196,12 @@ HRESULT CRackSorterModule::CycleUpdate(ITcTask* ipTask, ITcUnknown* ipCaller, UL
 		}
 	}
 
-	if (m_Inputs.x_endSwitch_right && m_Inputs.x_endSwitch_left) {
-		m_Outputs.x_motor_right = true;
+	if (m_Inputs.x_switch_01 || m_Inputs.x_switch_08) {
+		m_Outputs.x_motor_right = false;
 		m_Outputs.x_motor_left = false;
 	}
 	else {
-		m_Outputs.x_motor_right = false;
+		m_Outputs.x_motor_right = true;
 		m_Outputs.x_motor_left = false;
 	}
 
