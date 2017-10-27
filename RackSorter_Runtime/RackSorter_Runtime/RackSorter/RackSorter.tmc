@@ -82,37 +82,146 @@
       </Parameters>
       <DataAreas>
         <DataArea>
-          <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+          <AreaNo AreaType="InputDst">0</AreaNo>
           <Name>Inputs</Name>
           <ContextId>1</ContextId>
           <Symbol>
-            <Name>Value</Name>
-            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+            <Name>x_endSwitch_left</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol
+            ><Name>x_switch_00</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+            <Properties></Properties>
           </Symbol>
           <Symbol>
-            <Name>Status</Name>
-            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+            <Name>x_switch_01</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
           </Symbol>
           <Symbol>
-            <Name>Data</Name>
-            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+            <Name>x_switch_02</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>x_switch_03</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>x_switch_04</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>x_switch_05</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>x_switch_06</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>x_switch_07</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>x_switch_08</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>x_switch_09</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>x_endSwitch_right</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_floorSwitch_00_upstairs</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_floorSwitch_00_downstairs</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_floorSwitch_01_upstairs</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_floorSwitch_01_downstairs</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_floorSwitch_02_upstairs</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_floorSwitch_02_downstairs</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_floorSwitch_03_upstairs</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_floorSwitch_03_downstairs</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>stackerCrane_position_conveyor</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>stackerCrane_position_neutral</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>stackerCrane_position_stack</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>crossbeam_lightBarrier_packet</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>conveyor_lightBarrier_packet</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
           </Symbol>
         </DataArea>
         <DataArea>
-          <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+          <AreaNo AreaType="OutputSrc">1</AreaNo>
           <Name>Outputs</Name>
           <ContextId>1</ContextId>
           <Symbol>
-            <Name>Value</Name>
-            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+            <Name>x_motor_left</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
           </Symbol>
           <Symbol>
-            <Name>Control</Name>
-            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+            <Name>x_motor_right</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
           </Symbol>
           <Symbol>
-            <Name>Data</Name>
-            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+            <Name>y_motor_up</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>y_motor_down</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>z_motor_forward</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>z_motor_back</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>conveyorAndCrossbeam_motor_forward</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>conveyorAndCrossbeam_motor_back</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
           </Symbol>
         </DataArea>
       </DataAreas>
