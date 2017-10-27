@@ -201,7 +201,6 @@ HRESULT CRackSorterModule::CycleUpdate(ITcTask* ipTask, ITcUnknown* ipCaller, UL
 	{
 		m_Counter++;
 	}
-	m_Outputs.Value=m_Counter;
 
 	return hr;
 }
