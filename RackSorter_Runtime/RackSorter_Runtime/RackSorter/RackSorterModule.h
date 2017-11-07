@@ -5,6 +5,30 @@
 #include "RackSorterInterfaces.h"
 #include "AdsR0.h"
 
+// delcare physical rack size
+#define RACKSIZE_X 10
+#define RACKSIZE_Y 4
+#define HOME_X 5
+#define HOME_Y 0
+#define PWM_INTERVAL 2
+
+// motor state enum type
+enum MotorState {
+	Forward,
+	Backward,
+	Up,
+	Down,
+	Left,
+	Right,
+	Off
+};
+
+enum LoaderPosition {
+	Belt,
+	Neutral,
+	Rack
+};
+
 // parameter ids for TwinCAT module RackSorterModule with disabled code generation
 // could be moved to RackSorterServices.h
 const PTCID PID_RackSorterModuleAdsPort        = 0x00000002;
@@ -64,6 +88,9 @@ protected:
 	HRESULT AddModuleToCaller();
 	VOID RemoveModuleFromCaller();
 
+	void SetOutputs();
+	void InitializeRackSorter();
+
 	// Tracing
 	CTcTrace m_Trace;
 
@@ -83,5 +110,26 @@ protected:
 		invokeIdReadByOidAndPid = 1
 	};
 	ULONG  m_ReadByOidAndPid;
-	BOOL m_bCount;
+
+	// PWM thingy
+	UINT8 m_pwm = 0;
+	
+	// System state
+	bool m_Initialized = false;
+	bool m_Active = false;
+	bool m_Loaded = false;
+	UINT8 m_xPos = 0;
+	UINT8 m_yPos = 0;
+	// Extra-Flag do differ between upper and lower Y-Position (meh.)
+	bool m_yUpper = false;
+	LoaderPosition m_loaderPos = Neutral;
+	// Arrays of pointers to switch inputs
+	// We don't want to always copy the input data
+	bool* m_xSwitches[RACKSIZE_X];
+	bool* m_ySwitchesU[RACKSIZE_Y];
+	bool* m_ySwitchesL[RACKSIZE_Y];
+	// Motor states
+	MotorState m_xMotor = Off;
+	MotorState m_yMotor = Off;
+	MotorState m_zMotor = Off;
 };
