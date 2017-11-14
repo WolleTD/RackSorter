@@ -414,7 +414,7 @@
 							</Value>
 							<Value>
 								<Name>DefaultAdsPort</Name>
-								<Value>65535</Value>
+								<Value>801</Value>
 							</Value>
 							<Value>
 								<Name>ContextAdsPort</Name>

@@ -219,6 +219,110 @@ HRESULT CRackSorterModule::CycleUpdate(ITcTask* ipTask, ITcUnknown* ipCaller, UL
 	{
 		InitializeRackSorter();
 	}
+	// If initialized and active, perform things
+	else if (m_Active) {
+		// Update x/y position variables according to input arrays
+		UpdateSystemPosition();
+		// Check for loader task options
+		if (m_loaderTask == Load)
+		{
+			if (!m_yUpper)
+			{
+				if (m_loaderPos != Rack)
+				{
+					m_zMotor = Forward;
+				}
+				else
+				{
+					m_zMotor = Off;
+					m_yMotor = Up;
+					m_Loaded = true;
+				}
+			}
+			else
+			{
+				m_yMotor = Off;
+				m_yTargetUpper = true;
+				if (m_loaderPos != Neutral)
+				{
+					m_zMotor = Backward;
+				}
+				else {
+					m_zMotor = Off;
+					m_loaderTask = Nothing;
+				}
+			}
+		}
+		else if (m_loaderTask == Unload)
+		{
+			if (m_yUpper)
+			{
+				if (m_loaderPos != Rack)
+				{
+					m_zMotor = Forward;
+				}
+				else
+				{
+					m_zMotor = Off;
+					m_yMotor = Down;
+					m_Loaded = false;
+				}
+			}
+			else
+			{
+				m_yMotor = Off;
+				m_yTargetUpper = false;
+				if (m_loaderPos != Neutral)
+				{
+					m_zMotor = Backward;
+				}
+				else
+				{
+					m_zMotor = Off;
+					m_loaderTask = Nothing;
+				}
+			}
+		}
+		else
+		{
+			if (m_xPos < m_xTarget)
+			{
+				m_xMotor = Right;
+			}
+			else if (m_xPos > m_xTarget)
+			{
+				m_xMotor = Left;
+			}
+			else
+			{
+				m_xMotor = Off;
+			}
+			// Same shit for y
+			if (m_yPos < m_yTarget)
+			{
+				m_yMotor = Up;
+			}
+			else if (m_yPos > m_yTarget)
+			{
+				m_yMotor = Down;
+			}
+			else
+			{
+				if (m_yUpper && !m_yTargetUpper)
+				{
+					m_yMotor = Down;
+				}
+				else if (!m_yUpper && m_yTargetUpper)
+				{
+					m_yMotor = Up;
+				}
+				else
+				{
+					m_yMotor = Off;
+				}
+			}
+		}
+	}
 
 	SetOutputs();
 
@@ -264,13 +368,57 @@ VOID CRackSorterModule::RemoveModuleFromCaller()
 	m_Trace.Log(tlVerbose, FLEAVEA);
 }
 
+void CRackSorterModule::UpdateSystemPosition()
+{
+	// Update loader position first
+	if (m_Inputs.stackerCrane_position_neutral)
+	{
+		m_loaderPos = Neutral;
+	}
+	else if (m_Inputs.stackerCrane_position_conveyor)
+	{
+		m_loaderPos = Belt;
+	}
+	else if (m_Inputs.stackerCrane_position_stack)
+	{
+		m_loaderPos = Rack;
+	}
+
+	// Update X Position
+	for (int i = 0; i < RACKSIZE_X; i++)
+	{
+		if (*m_xSwitches[i])
+		{
+			m_xPos = i;
+			break;
+		}
+	}
+
+	// Update Y Position
+	for (int i = 0; i < RACKSIZE_Y; i++)
+	{
+		if (*m_ySwitchesL[i])
+		{
+			m_yPos = i;
+			m_yUpper = false;
+			break;
+		}
+		if (*m_ySwitchesU[i])
+		{
+			m_yPos = i;
+			m_yUpper = true;
+			break;
+		}
+	}
+}
+
 void CRackSorterModule::SetOutputs()
 {
 	// Simple PWM fits for this case
 	m_pwm = (m_pwm + 1) % PWM_INTERVAL;
 	bool isPWM = (m_pwm == 0);
 	
-	switch (xMotor)
+	switch (m_xMotor)
 	{
 	case Left:
 		m_Outputs.x_motor_right = false;
@@ -287,15 +435,15 @@ void CRackSorterModule::SetOutputs()
 		break;
 	}
 
-	switch (yMotor)
+	switch (m_yMotor)
 	{
 	case Up:
 		m_Outputs.y_motor_down = false;
-		m_Outputs.y_motor_up = isPWM;
+		m_Outputs.y_motor_up = true;
 		break;
 	case Down:
 		m_Outputs.y_motor_up = false;
-		m_Outputs.y_motor_down = isPWM;
+		m_Outputs.y_motor_down = true;
 		break;
 	case Off:
 	default:
@@ -306,7 +454,7 @@ void CRackSorterModule::SetOutputs()
 
 	// Z-Motor is the Crane pickup thingy ("crossbeam"?)
 	// Forward is a movement towards the rack, Backward is obviously the other way
-	switch (zMotor)
+	switch (m_zMotor)
 	{
 	case Forward:
 		m_Outputs.z_motor_back = false;
@@ -416,8 +564,8 @@ void CRackSorterModule::InitializeRackSorter()
 	}
 	if (!xInitialized) return;
 	// Initialized
-	m_xPos = HOME_X;
-	m_yPos = HOME_Y;
+	m_xPos = m_xTarget = HOME_X;
+	m_yPos = m_yTarget = HOME_Y;
 	
 	m_Initialized = zInitialized && yInitialized && xInitialized;
 }
@@ -437,6 +585,11 @@ void CRackSorterModule::AdsReadWriteInd
 	m_Trace.Log(tlVerbose, FENTERA "oid=0x%08x, invokeId=%d, indexGroup=0x%08x, indexOffset=0x%08x, cbReadLength=%d, cbWriteLength=%d, pData=0x%p",
 		m_objId.value, invokeId, indexGroup, indexOffset, cbReadLength, cbWriteLength, pData);
 
+	UINT16 tempPosition = 0;
+	UINT8 tmpX = 0;
+	UINT8 tmpY = 0;
+	bool retVal = false;
+
 	switch(indexGroup)
 	{
 	case Group1AdminStatus:
@@ -444,51 +597,112 @@ void CRackSorterModule::AdsReadWriteInd
 		{
 		// Operation ON/OFF
 		case Offset1:
+			// Set m_Active to desired value
+			m_Active = *(bool*)pData;
 
-			// TODO: add custom code here
+			// Return value is always true
+			*(bool*)pData = true;
 
-			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 0, NULL); 
+			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData); 
 			break;
 		// Return current system position
 		case Offset2:
+			// Return system position as UINT16
+			tempPosition = (m_xPos << 8) + m_yPos;
+			pData = &tempPosition;
 
-			// TODO: add custom code here
-			pData = &m_Counter;
-
-			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 4, pData);
-			// AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 0, NULL);
+			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 2, pData);
 			break;
 		// Return current loaded-status
 		case Offset3:
+			pData = &m_Loaded;
+
+			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData);
 			break;
 		// Reset the runtime
 		case Offset4:
+			m_Active = false;
+			m_Initialized = false;
+			*(bool*)pData = true;
+
+			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData);
 			break;
 		}
 		break;
 	case Group2RackControl:
 		switch(indexOffset)
 		{
-
+		// GoToLoad(x,y)
 		case Offset1:
 			m_Trace.Log(tlInfo, FNAMEA "oid=0x%08x indexGroup=0x%08x, indexOffset=0x%08x", 
 				m_objId.value, indexGroup, indexOffset );
 
-			// TODO: add custom code here
-			pData = &m_Counter;
+			// Get the xy thingy
+			tempPosition = *(UINT16*)pData;
+			tmpX = tempPosition >> 8;
+			tmpY = tempPosition & 255;
+			retVal = false;
+			if (IS_READY() && tmpX < RACKSIZE_X && tmpY < RACKSIZE_Y)
+			{
+				m_xTarget = tmpX;
+				m_yTarget = tmpY;
+				m_yTargetUpper = false;
+				retVal = true;
+			}
 
-			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 4, pData);
+			pData = &retVal;
+			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData);
 			break;
-
+		// GoToUnload(x,y)
 		case Offset2:
-			m_Trace.Log(tlInfo, FNAMEA "oid=0x%08x indexGroup=0x%08x, indexOffset=0x%08x", 
-				m_objId.value, indexGroup, indexOffset );
+			m_Trace.Log(tlInfo, FNAMEA "oid=0x%08x indexGroup=0x%08x, indexOffset=0x%08x",
+				m_objId.value, indexGroup, indexOffset);
 
-			// TODO: add custom code here
-			m_Counter = 0;
-			pData = &m_Counter;
+			// Get the xy thingy
+			tempPosition = *(UINT16*)pData;
+			tmpX = tempPosition >> 8;
+			tmpY = tempPosition & 255;
+			retVal = false;
+			if (IS_READY() && tmpX < RACKSIZE_X && tmpY < RACKSIZE_Y)
+			{
+				m_xTarget = tmpX;
+				m_yTarget = tmpY;
+				m_yTargetUpper = true;
+				retVal = true;
+			}
 
-			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 4, pData);
+			pData = &retVal;
+			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData);
+			break;
+		// Load()
+		case Offset3:
+			m_Trace.Log(tlInfo, FNAMEA "oid=0x%08x indexGroup=0x%08x, indexOffset=0x%08x",
+				m_objId.value, indexGroup, indexOffset);
+
+			retVal = false;
+			if (IS_READY() && !m_Loaded)
+			{
+				m_loaderTask = Load;
+				retVal = true;
+			}
+
+			pData = &retVal;
+			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData);
+			break;
+		// Unload()
+		case Offset4:
+			m_Trace.Log(tlInfo, FNAMEA "oid=0x%08x indexGroup=0x%08x, indexOffset=0x%08x",
+				m_objId.value, indexGroup, indexOffset);
+
+			bool retVal = false;
+			if (IS_READY() && m_Loaded)
+			{
+				m_loaderTask = Unload;
+				retVal = true;
+			}
+
+			pData = &retVal;
+			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData);
 			break;
 		}
 		break;

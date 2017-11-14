@@ -11,6 +11,7 @@
 #define HOME_X 5
 #define HOME_Y 0
 #define PWM_INTERVAL 2
+#define IS_READY() (m_xMotor == Off && m_yMotor == Off && m_zMotor == Off && m_loaderTask == Nothing)
 
 // motor state enum type
 enum MotorState {
@@ -27,6 +28,12 @@ enum LoaderPosition {
 	Belt,
 	Neutral,
 	Rack
+};
+
+enum LoaderTask {
+	Load,
+	Unload,
+	Nothing
 };
 
 // parameter ids for TwinCAT module RackSorterModule with disabled code generation
@@ -88,7 +95,11 @@ protected:
 	HRESULT AddModuleToCaller();
 	VOID RemoveModuleFromCaller();
 
+	// Read input states and update system position
+	void UpdateSystemPosition();
+	// Sets physical outputs according to MotorStates
 	void SetOutputs();
+	// Initialization routine to reach a defined state
 	void InitializeRackSorter();
 
 	// Tracing
@@ -114,15 +125,30 @@ protected:
 	// PWM thingy
 	UINT8 m_pwm = 0;
 	
-	// System state
+	// System state variables
+	// Initialization routine finished?
 	bool m_Initialized = false;
+	// Is the system active?
 	bool m_Active = false;
+	// Is the carriage loaded with something?
 	bool m_Loaded = false;
+	// Current (last known) position of the carriage
 	UINT8 m_xPos = 0;
 	UINT8 m_yPos = 0;
 	// Extra-Flag do differ between upper and lower Y-Position (meh.)
 	bool m_yUpper = false;
+	// Loader carriage position
 	LoaderPosition m_loaderPos = Neutral;
+
+	// System movement state variables
+	// Target position the system currently tries to reach
+	UINT8 m_xTarget = 0;
+	UINT8 m_yTarget = 0;
+	bool m_yTargetUpper = false;
+
+	LoaderTask m_loaderTask = Nothing;
+
+	// Input/Output
 	// Arrays of pointers to switch inputs
 	// We don't want to always copy the input data
 	bool* m_xSwitches[RACKSIZE_X];
