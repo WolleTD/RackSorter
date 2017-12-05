@@ -588,7 +588,7 @@ void CRackSorterModule::AdsReadWriteInd
 	UINT16 tempPosition = 0;
 	UINT8 tmpX = 0;
 	UINT8 tmpY = 0;
-	bool retVal = false;
+	UINT8 retVal = false;
 
 	switch(indexGroup)
 	{
@@ -641,13 +641,24 @@ void CRackSorterModule::AdsReadWriteInd
 			tempPosition = *(UINT16*)pData;
 			tmpX = tempPosition >> 8;
 			tmpY = tempPosition & 255;
-			retVal = false;
-			if (IS_READY() && tmpX < RACKSIZE_X && tmpY < RACKSIZE_Y)
+			retVal = AdsResponse::ERROR_SERVER;
+			if (IS_READY())
 			{
-				m_xTarget = tmpX;
-				m_yTarget = tmpY;
-				m_yTargetUpper = false;
-				retVal = true;
+				if (tmpX < RACKSIZE_X && tmpY < RACKSIZE_Y)
+				{
+					m_xTarget = tmpX;
+					m_yTarget = tmpY;
+					m_yTargetUpper = false;
+					retVal = AdsResponse::OK;
+				}
+				else
+				{
+					retVal = AdsResponse::ERROR_CLIENT;
+				}
+			}
+			else
+			{
+				retVal = AdsResponse::BUSY;
 			}
 
 			pData = &retVal;
@@ -662,13 +673,24 @@ void CRackSorterModule::AdsReadWriteInd
 			tempPosition = *(UINT16*)pData;
 			tmpX = tempPosition >> 8;
 			tmpY = tempPosition & 255;
-			retVal = false;
-			if (IS_READY() && tmpX < RACKSIZE_X && tmpY < RACKSIZE_Y)
+			retVal = AdsResponse::ERROR_SERVER;
+			if (IS_READY())
 			{
-				m_xTarget = tmpX;
-				m_yTarget = tmpY;
-				m_yTargetUpper = true;
-				retVal = true;
+				if (tmpX < RACKSIZE_X && tmpY < RACKSIZE_Y)
+				{
+					m_xTarget = tmpX;
+					m_yTarget = tmpY;
+					m_yTargetUpper = true;
+					retVal = AdsResponse::OK;
+				}
+				else
+				{
+					retVal = AdsResponse::ERROR_CLIENT;
+				}
+			}
+			else
+			{
+				retVal = AdsResponse::BUSY;
 			}
 
 			pData = &retVal;
@@ -679,11 +701,22 @@ void CRackSorterModule::AdsReadWriteInd
 			m_Trace.Log(tlInfo, FNAMEA "oid=0x%08x indexGroup=0x%08x, indexOffset=0x%08x",
 				m_objId.value, indexGroup, indexOffset);
 
-			retVal = false;
-			if (IS_READY() && !m_Loaded)
+			retVal = AdsResponse::ERROR_SERVER;
+			if (IS_READY())
 			{
-				m_loaderTask = Load;
-				retVal = true;
+				if (!m_Loaded && !m_yUpper)
+				{
+					m_loaderTask = Load;
+					retVal = AdsResponse::OK;
+				}
+				else
+				{
+					retVal = AdsResponse::ERROR_CLIENT;
+				}
+			}
+			else
+			{
+				retVal = AdsResponse::BUSY;
 			}
 
 			pData = &retVal;
@@ -694,11 +727,22 @@ void CRackSorterModule::AdsReadWriteInd
 			m_Trace.Log(tlInfo, FNAMEA "oid=0x%08x indexGroup=0x%08x, indexOffset=0x%08x",
 				m_objId.value, indexGroup, indexOffset);
 
-			bool retVal = false;
-			if (IS_READY() && m_Loaded)
+			retVal = AdsResponse::ERROR_SERVER;
+			if (IS_READY())
 			{
-				m_loaderTask = Unload;
-				retVal = true;
+				if (m_Loaded && m_yUpper)
+				{
+					m_loaderTask = Unload;
+					retVal = AdsResponse::OK;
+				}
+				else
+				{
+					retVal = AdsResponse::ERROR_CLIENT;
+				}
+			}
+			else
+			{
+				retVal = AdsResponse::BUSY;
 			}
 
 			pData = &retVal;

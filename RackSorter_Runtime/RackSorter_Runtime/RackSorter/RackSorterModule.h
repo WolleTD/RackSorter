@@ -36,6 +36,13 @@ enum LoaderTask {
 	Nothing
 };
 
+enum AdsResponse : UINT8 {
+	OK = 0x00,
+	BUSY = 0x01,
+	ERROR_CLIENT = 0x02,
+	ERROR_SERVER = 0x04
+};
+
 // parameter ids for TwinCAT module RackSorterModule with disabled code generation
 // could be moved to RackSorterServices.h
 const PTCID PID_RackSorterModuleAdsPort        = 0x00000002;
