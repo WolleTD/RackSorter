@@ -619,11 +619,18 @@ void CRackSorterModule::AdsReadWriteInd
 
 			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData);
 			break;
-		// Reset the runtime
+		// Reset the runtime if pData is true, otherwise return init-status
 		case Offset4:
-			m_Active = false;
-			m_Initialized = false;
-			*(bool*)pData = true;
+			if (*(bool*)pData)
+			{
+				m_Active = false;
+				m_Initialized = false;
+				*(bool*)pData = true;
+			}
+			else
+			{
+				*(bool*)pData = m_Initialized;
+			}
 
 			AdsReadWriteRes(rAddr, invokeId, ADSERR_NOERR, 1, pData);
 			break;
