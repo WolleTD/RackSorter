@@ -323,6 +323,13 @@ HRESULT CRackSorterModule::CycleUpdate(ITcTask* ipTask, ITcUnknown* ipCaller, UL
 			}
 		}
 	}
+	else
+	{
+		// Not active, turn off all motors
+		m_xMotor = Off;
+		m_yMotor = Off;
+		m_zMotor = Off;
+	}
 
 	SetOutputs();
 
