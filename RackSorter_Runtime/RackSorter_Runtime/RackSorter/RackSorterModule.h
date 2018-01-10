@@ -11,7 +11,7 @@
 #define HOME_X 5
 #define HOME_Y 0
 #define PWM_INTERVAL 2
-#define IS_READY() (m_xMotor == Off && m_yMotor == Off && m_zMotor == Off && m_loaderTask == Nothing)
+#define IS_READY() (m_xPos == m_xTarget && m_yPos == m_yTarget && m_loaderTask == Nothing)
 
 // motor state enum type
 enum MotorState {
