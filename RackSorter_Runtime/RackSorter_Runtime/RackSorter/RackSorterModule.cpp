@@ -632,6 +632,7 @@ void CRackSorterModule::AdsReadWriteInd
 			{
 				m_Active = false;
 				m_Initialized = false;
+				m_Loaded = false;
 				*(bool*)pData = true;
 			}
 			else
